@@ -26,37 +26,37 @@
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdD0GaXMz3h0XLHMFLYaZkO0kdEcAfJK-RxflMtHigUSLRtVA/viewform';">Estado caldera</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdy9wTmNdA_iIkCkEm5GnD9nJws49vg5LieI3uy_gny3yK5UQ/viewform';">Registro consumo carbón</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScafRkHROYXL9EWXQQiy2--O7tutSStD4mCOvfLQoIjNh4BYQ/viewform';">Purga caldera</button>
-  </div>
+</div>
 
-  <script>
+<script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxzrS2xCwDyQkKHkEt_oEJYh-rz7D5V1v1ZGL_LdlNgiqcBR1doEJD7Jvpc0Mm89LgJBw/exec";
     
     var url = document.location.href;
     var k = url.substr(url.lastIndexOf("k=") + 2);
     
     function verificarClave(clave, urlDestino) {
-      var inputClave = prompt("Ingrese la clave:");
+        var inputClave = prompt("Ingrese la clave:");
 
-      if (inputClave === clave) {
-        window.location.href = urlDestino;
-      } else {
-        if (k) {
-      fetch(AS_URL_BASE+'?k='+k)
-      .then(r => r.text())
-      .then((r) => {
-        console.log(r);
-        
-        if(r){
-          document.location.replace(r);
+        if (inputClave === clave) {
+            window.location.href = urlDestino;
+        } else {
+            if (k) {
+                fetch(AS_URL_BASE + '?k=' + k)
+                    .then(r => r.text())
+                    .then((r) => {
+                        console.log(r);
+                        
+                        if (r) {
+                            document.location.replace(r);
+                        }
+                    })
+                    .catch(err => console.log(err));
+            }
         }
-      })
-      .catch(err => console.log(err));
-      }
     }
+</script>
 
-  </script>
-  
-  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
   
  
 </body>
