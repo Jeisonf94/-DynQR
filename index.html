@@ -5,9 +5,10 @@
   <title>COLRESIN</title>
   <style>
     body {
-      background-image: url('https://drive.google.com/file/d/1kv55UZiwYatJ_IbS6ZyMzLmZz-K_5BsO/view?usp=share_link');
+      background-image: url('ruta/de/la/imagen.jpg');
       background-size: cover;
       background-repeat: no-repeat;
+      background-position: center;
       color: navy;
       font-size: 25px;
       font-family: Verdana, sans-serif;
@@ -22,24 +23,24 @@
   <h1 id="miTitulo">Bienvenido a formulario Colresin</h1> 
 
   <div>
-    <button onclick="verificarClave('colresin12', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
-    <button onclick="verificarClave('colresin10', 'https://docs.google.com/forms/d/e/1FAIpQLSeo60umRo1n2J3gZbLgNwtgEadEsjrqjeP3Bnoxiz3UZT8FCw/viewform');">Bitácora de caldera</button>
+    <button onclick="verificarClave('clave1', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
+    <button onclick="verificarClave('clave2', 'https://docs.google.com/forms/d/e/1FAIpQLSeo60umRo1n2J3gZbLgNwtgEadEsjrqjeP3Bnoxiz3UZT8FCw/viewform');">Bitácora de caldera</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfSX7Txeq4anlisN1fMKC6tTgiCJBx7ETJJLW6aSn_PT6_X3A/viewform';">Aditivo para caldera</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdD0GaXMz3h0XLHMFLYaZkO0kdEcAfJK-RxflMtHigUSLRtVA/viewform';">Estado caldera</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdy9wTmNdA_iIkCkEm5GnD9nJws49vg5LieI3uy_gny3yK5UQ/viewform';">Registro consumo carbón</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScafRkHROYXL9EWXQQiy2--O7tutSStD4mCOvfLQoIjNh4BYQ/viewform';">Purga caldera</button>
-</div>
+  </div>
 
-<script>
+  <script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxzrS2xCwDyQkKHkEt_oEJYh-rz7D5V1v1ZGL_LdlNgiqcBR1doEJD7Jvpc0Mm89LgJBw/exec";
     
     var url = document.location.href;
     var k = url.substr(url.lastIndexOf("k=") + 2);
     
     function verificarClave(clave, urlDestino) {
-        var inputClave = prompt("Ingrese la clave:");
+      var inputClave = prompt("Ingrese la clave:");
 
-        if (inputClave === clave) {
+      if (inputClave === clave) {
             window.location.href = urlDestino;
         } else {
             if (k) {
