@@ -28,7 +28,6 @@
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdD0GaXMz3h0XLHMFLYaZkO0kdEcAfJK-RxflMtHigUSLRtVA/viewform';">Estado caldera</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdy9wTmNdA_iIkCkEm5GnD9nJws49vg5LieI3uy_gny3yK5UQ/viewform';">Registro consumo carbón</button>
     <button onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScafRkHROYXL9EWXQQiy2--O7tutSStD4mCOvfLQoIjNh4BYQ/viewform';">Purga caldera</button>
-  
   </div>
 
   <script>
@@ -52,7 +51,7 @@
       .then(r => r.text())
       .then((r) => {
         console.log(r);
-        //document.write(r);
+        
         if(r){
           document.location.replace(r);
         }
