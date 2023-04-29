@@ -4,22 +4,20 @@
   <meta charset="utf-8">
   <title>COLRESIN</title>
   <style>
-      body {
-     
-        background-color: white;
-        color: navy;
-        font-size: 25px;
-        font-family: Verdana, sans-serif;
-        text-align: center;
-        border-bottom: 5px solid navy;
-        padding-bottom: 3px;
-        margin-top: 20px;
-      }
-
+    body {
+      background-color: white;
+      color: navy;
+      font-size: 25px;
+      font-family: Verdana, sans-serif;
+      text-align: center;
+      border-bottom: 5px solid navy;
+      padding-bottom: 3px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1 id= "miTitulo"> Bienvenido a formulario Colresin</h1> 
+  <h1 id="miTitulo">Bienvenido a formulario Colresin</h1> 
 
   <div>
     <button onclick="verificarClave('clave1', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
@@ -31,22 +29,18 @@
   </div>
 
   <script>
-    
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxzrS2xCwDyQkKHkEt_oEJYh-rz7D5V1v1ZGL_LdlNgiqcBR1doEJD7Jvpc0Mm89LgJBw/exec";
     
     var url = document.location.href;
-    var k = url.substr(url.lastIndexOf("k=")+2);
+    var k = url.substr(url.lastIndexOf("k=") + 2);
     
-      function verificarClave(clave, urlDestino) {
+    function verificarClave(clave, urlDestino) {
       var inputClave = prompt("Ingrese la clave:");
 
-    
       if (inputClave === clave) {
-       
         window.location.href = urlDestino;
       } else {
-    
-    if(k){
+        if (k) {
       fetch(AS_URL_BASE+'?k='+k)
       .then(r => r.text())
       .then((r) => {
