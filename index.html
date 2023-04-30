@@ -35,11 +35,17 @@
     
     /* Estilos para el interruptor */
     .switch {
+      display: flex;
+      align-items: center;
       position: fixed;
       top: 10px;
       left: 10px;
       z-index: 999;
       transform: scale(2);
+    }
+    
+    .switch label {
+      margin-left: 10px;
     }
     
     .switch input[type="checkbox"] {
@@ -80,10 +86,11 @@
 </head>
 <body>
   <!-- Interruptor -->
-  <label class="switch">
+  <div class="switch">
     <input type="checkbox" id="interruptor" onclick="toggleForm()" checked>
     <span class="slider"></span>
-  </label>
+  </div>
+  <label for="interruptor">Estado de caldera</label>
 
   <!-- Resto del código original -->
   <h1 id="miTitulo">Bienvenido a formulario Colresin</h1> 
