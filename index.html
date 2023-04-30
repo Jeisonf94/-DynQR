@@ -76,15 +76,25 @@
       transform: translateX(20px);
       background-color: #FF0000;
     }
+    
+    /* Estilos para el texto */
+    #estadoCaldera {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+    }
   </style>
 </head>
 <body>
-  <!-- Interruptor y texto -->
+  <!-- Interruptor -->
   <label class="switch">
     <input type="checkbox" id="interruptor" onclick="toggleForm()" checked>
     <span class="slider"></span>
   </label>
-  <span>Estado de caldera</span>
+
+  <!-- Texto "Estado de caldera" -->
+  <span id="estadoCaldera">Estado de caldera</span>
 
   <!-- Resto del código original -->
   <h1 id="miTitulo">Bienvenido a formulario Colresin</h1> 
