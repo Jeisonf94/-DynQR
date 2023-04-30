@@ -76,6 +76,13 @@
       transform: translateX(20px);
       background-color: #FF0000;
     }
+    
+    /* Estilos para el texto "Estado de caldera" */
+    #estado-caldera {
+      position: fixed;
+      top: 20px;
+      left: 70px;
+    }
   </style>
 </head>
 <body>
@@ -84,7 +91,7 @@
     <input type="checkbox" id="interruptor" onclick="toggleForm()" checked>
     <span class="slider"></span>
   </label>
-  <span style="position: relative; top: -10px;">Estado de caldera</span>
+  <span id="estado-caldera">Estado de caldera</span>
 
   <!-- Resto del código original -->
   <h1 id="miTitulo">Bienvenido a formulario Colresin</h1> 
