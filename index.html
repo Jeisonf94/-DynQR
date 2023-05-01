@@ -10,9 +10,6 @@
       font-size: 25px;
       font-family: Verdana, sans-serif;
       text-align: center;
-      position: fixed;
-      top: 10px;
-      right: 1px;
       border-bottom: 5px solid navy;
       padding-bottom: 3px;
       margin-top: 20px;
@@ -97,11 +94,11 @@
   <span id="estado-caldera">Estado de caldera</span>
 
   <!-- Resto del código original -->
-  <h1 id="miTitulo">Bienvenido a formularios operativos Colresin</h1> 
- 
+  <h1 id="miTitulo">Bienvenido a formulario Colresin</h1> 
+
   <div id="formulario" style="display: block;">
-     <button class="btn" onclick="verificarClave('Colresin2023-', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
-    <button class="btn" onclick="verificarClave('Colresin2023', 'https://docs.google.com/forms/d/e/1FAIpQLSeo60umRo1n2J3gZbLgNwtgEadEsjrqjeP3Bnoxiz3UZT8FCw/viewform');">Bitácora de caldera</button>
+     <button class="btn" onclick="verificarClave('clave1', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
+    <button class="btn" onclick="verificarClave('clave2', 'https://docs.google.com/forms/d/e/1FAIpQLSeo60umRo1n2J3gZbLgNwtgEadEsjrqjeP3Bnoxiz3UZT8FCw/viewform');">Bitácora de caldera</button>
     <button class="btn" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfSX7Txeq4anlisN1fMKC6tTgiCJBx7ETJJLW6aSn_PT6_X3A/viewform';">Aditivo para caldera</button>
     <button class="btn" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdD0GaXMz3h0XLHMFLYaZkO0kdEcAfJK-RxflMtHigUSLRtVA/viewform';">Estado caldera</button>
     <button class="btn" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdy9wTmNdA_iIkCkEm5GnD9nJws49vg5LieI3uy_gny3yK5UQ/viewform';">Registro consumo carbón</button>
@@ -110,34 +107,13 @@
   </div>
   
   <div class="bg-image"></div>
-  <div id="cellValue"></div>
-  
+
   <script>
-    // Función para obtener el valor de una celda de Google Sheets
-    function fetchCellValue() {
-      const spreadsheetId = '13SVXmHirm3dXeVzZ2yb6c4fDin6MpFkVN-68kZjkSxk';
-      const range = 'menú!F2'; // Cambia esto por el rango de la celda que deseas obtener
-
-      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`)
-        .then(response => response.json())
-        .then(data => {
-          const cellValue = data.values[0][0]; // Se asume que el valor se encuentra en la primera celda del rango
-          // Muestra el valor de la celda en el elemento <div>
-          const cellElement = document.getElementById('cellValue');
-          cellElement.textContent = cellValue;
-        })
-        .catch(error => console.error('Error al obtener el valor de la celda:', error));
-    }
-
-    // Llama a la función cuando sea necesario
-    fetchCellValue();
-
-    // Código adicional que me proporcionaste
     const AS_URL_BASE =  "https://script.google.com/macros/s/AKfycbxzrS2xCwDyQkKHkEt_oEJYh-rz7D5V1v1ZGL_LdlNgiqcBR1doEJD7Jvpc0Mm89LgJBw/exec";
-
+    
     var url = document.location.href;
     var k = url.substr(url.lastIndexOf("k=") + 2);
-
+    
     function verificarClave(clave, urlDestino) {
       var inputClave = prompt("Ingrese la clave:");
 
@@ -149,7 +125,7 @@
                     .then(r => r.text())
                     .then((r) => {
                         console.log(r);
-
+                        
                         if (r) {
                             document.location.replace(r);
                         }
@@ -158,7 +134,10 @@
             }
         }
     }
-  </script>
+</script>
+
+<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  
+ 
 </body>
 </html>
-
