@@ -121,7 +121,7 @@
       fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`)
         .then(response => response.json())
         .then(data => {
-          const cellValue = data.values[0][0]; // Se asume que el valor se encuentra en la primera celda del rango
+          const cellValue = data.values[7][2]; // Se asume que el valor se encuentra en la primera celda del rango
           // Utiliza cellValue según tus necesidades en tu código
           console.log('Valor de la celda:', cellValue);
           // Mostrar el valor en el HTML
