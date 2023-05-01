@@ -116,7 +116,7 @@
     function fetchCellValue() {
       const spreadsheetId = '13SVXmHirm3dXeVzZ2yb6c4fDin6MpFkVN-68kZjkSxk';
       const sheetName = 'menú';
-      const range = `${sheetName}!G1`;
+      const range = `${sheetName}!G2`;
 
       fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`)
         .then(response => response.json())
