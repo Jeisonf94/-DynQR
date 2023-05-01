@@ -110,26 +110,27 @@
   </div>
   
   <div class="bg-image"></div>
-  <div id="valor-celda"></div>
-
+  <div id="cellValue"></div>
+  
   <script>
-    / // Función para obtener el valor de una celda de Google Sheets
+    // Función para obtener el valor de una celda de Google Sheets
     function fetchCellValue() {
       const spreadsheetId = '13SVXmHirm3dXeVzZ2yb6c4fDin6MpFkVN-68kZjkSxk';
-      const range = 'menú!F2';
+      const range = 'menú!F2'; // Cambia esto por el rango de la celda que deseas obtener
 
       fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`)
         .then(response => response.json())
         .then(data => {
-          const cellValue = data.values[0][0];
-          document.getElementById('valor-celda').textContent = cellValue;
-          console.log('Valor de la celda:', cellValue);
+          const cellValue = data.values[0][0]; // Se asume que el valor se encuentra en la primera celda del rango
+          // Muestra el valor de la celda en el elemento <div>
+          const cellElement = document.getElementById('cellValue');
+          cellElement.textContent = cellValue;
         })
         .catch(error => console.error('Error al obtener el valor de la celda:', error));
     }
 
-    // Llama a la función al cargar la página
-    window.addEventListener('DOMContentLoaded', fetchCellValue);
+    // Llama a la función cuando sea necesario
+    fetchCellValue();
 
     // Código adicional que me proporcionaste
     const AS_URL_BASE =  "https://script.google.com/macros/s/AKfycbxzrS2xCwDyQkKHkEt_oEJYh-rz7D5V1v1ZGL_LdlNgiqcBR1doEJD7Jvpc0Mm89LgJBw/exec";
