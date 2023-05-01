@@ -116,7 +116,7 @@
     / // Función para obtener el valor de una celda de Google Sheets
     function fetchCellValue() {
       const spreadsheetId = '13SVXmHirm3dXeVzZ2yb6c4fDin6MpFkVN-68kZjkSxk';
-      const range = 'menú!G2';
+      const range = 'menú!F2';
 
       fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`)
         .then(response => response.json())
