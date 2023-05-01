@@ -98,7 +98,7 @@
 
   <!-- Resto del código original -->
   <h1 id="miTitulo">Bienvenido a formularios operativos Colresin</h1> 
-  <div id="valor-celda"></div>
+ 
   <div id="formulario" style="display: block;">
      <button class="btn" onclick="verificarClave('clave1', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
     <button class="btn" onclick="verificarClave('clave2', 'https://docs.google.com/forms/d/e/1FAIpQLSeo60umRo1n2J3gZbLgNwtgEadEsjrqjeP3Bnoxiz3UZT8FCw/viewform');">Bitácora de caldera</button>
@@ -110,13 +110,13 @@
   </div>
   
   <div class="bg-image"></div>
-
-  <script>
+  <div id="valor-celda"></div>
+   <script>
     // Función para obtener el valor de una celda de Google Sheets
     function fetchCellValue() {
       const spreadsheetId = '13SVXmHirm3dXeVzZ2yb6c4fDin6MpFkVN-68kZjkSxk';
       const sheetName = 'menú';
-      const range = `${sheetName}!G2`;
+      const range = `${sheetName}!G1`;
 
       fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`)
         .then(response => response.json())
@@ -124,6 +124,9 @@
           const cellValue = data.values[0][0]; // Se asume que el valor se encuentra en la primera celda del rango
           // Utiliza cellValue según tus necesidades en tu código
           console.log('Valor de la celda:', cellValue);
+          // Mostrar el valor en el HTML
+          const valorCeldaElement = document.getElementById('valor-celda');
+          valorCeldaElement.textContent = 'Valor de la celda: ' + cellValue;
         })
         .catch(error => console.error('Error al obtener el valor de la celda:', error));
     }
