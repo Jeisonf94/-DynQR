@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -32,78 +32,18 @@
       font-size: 20px;
       padding: 10px 20px;
     }
-    
-    /* Estilos para el interruptor */
-    .switch {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 999;
-      transform: scale(2);
-    }
-    
-    .switch input[type="checkbox"] {
-      display: none;
-    }
-    
-    .slider {
-      width: 40px;
-      height: 20px;
-      background-color: #ccc;
-      border-radius: 10px;
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-    }
-    
-    .slider:before {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #4CAF50;
-      border-radius: 50%;
-      top: 0;
-      left: 0;
-      transition: all 0.3s ease;
-    }
-    
-    input[type="checkbox"]:checked + .slider {
-      background-color: #FF0000;
-    }
-    
-    input[type="checkbox"]:checked + .slider:before {
-      transform: translateX(20px);
-      background-color: #FF0000;
-    }
-    
-    /* Estilos para el texto "Estado de caldera" */
-    #estado-caldera {
-      position: fixed;
-      top: 15px;
-      left: 100px;
-    }
   </style>
 </head>
 <body>
-  <!-- Interruptor y texto -->
-  <label class="switch">
-    <input type="checkbox" id="interruptor" onclick="toggleForm()" checked>
-    <span class="slider"></span>
-  </label>
-  <span id="estado-caldera">Estado de caldera</span>
-
-  <!-- Resto del código original -->
   <h1 id="miTitulo">Bienvenido a formulario Colresin</h1> 
 
-  <div id="formulario" style="display: block;">
-     <button class="btn" onclick="verificarClave('clave1', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
+  <div>
+    <button class="btn" onclick="verificarClave('clave1', 'https://docs.google.com/forms/d/e/1FAIpQLSfeO_RO4hvFtIqg7h7WqTtvdFKetmDyiANnbI0-1fegFVtoHg/viewform');">Facturación carbón</button>
     <button class="btn" onclick="verificarClave('clave2', 'https://docs.google.com/forms/d/e/1FAIpQLSeo60umRo1n2J3gZbLgNwtgEadEsjrqjeP3Bnoxiz3UZT8FCw/viewform');">Bitácora de caldera</button>
     <button class="btn" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfSX7Txeq4anlisN1fMKC6tTgiCJBx7ETJJLW6aSn_PT6_X3A/viewform';">Aditivo para caldera</button>
     <button class="btn" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdD0GaXMz3h0XLHMFLYaZkO0kdEcAfJK-RxflMtHigUSLRtVA/viewform';">Estado caldera</button>
     <button class="btn" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdy9wTmNdA_iIkCkEm5GnD9nJws49vg5LieI3uy_gny3yK5UQ/viewform';">Registro consumo carbón</button>
     <button class="btn" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScafRkHROYXL9EWXQQiy2--O7tutSStD4mCOvfLQoIjNh4BYQ/viewform';">Purga caldera</button>
-  
   </div>
   
   <div class="bg-image"></div>
