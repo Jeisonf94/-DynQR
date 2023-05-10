@@ -54,9 +54,6 @@
     var url = document.location.href;
     var k = url.substr(url.lastIndexOf("k=") + 2);
     
-    function verificarClave(clave, urlDestino) {
-      var inputClave = prompt("Ingrese la clave:");
-
             if (k) {
                 fetch(AS_URL_BASE + '?k=' + k)
                     .then(r => r.text())
@@ -69,6 +66,9 @@
                     })
                     .catch(err => console.log(err));
     
+      function verificarClave(clave, urlDestino) {
+      var inputClave = prompt("Ingrese la clave:");
+
       if (inputClave === clave) {
             window.location.href = urlDestino;
         } else {
